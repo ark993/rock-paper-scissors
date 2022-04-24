@@ -1,6 +1,3 @@
-let playerSelection = "rock";
-let computerSelection = computerPlay();
-
 function computerPlay() {
     let options = ["Rock", "Paper", "Scissors"];
     const computerChoice = Math.floor(Math.random() * options.length); 
@@ -8,11 +5,11 @@ function computerPlay() {
     return decision;
 }
 
-function playRound(playerSelection, computerSelection) {
+function playRound(playerSelection, computerPlay) {
     
     switch(playerSelection) {
         case "rock":
-            switch(computerSelection) {
+            switch(computerPlay()) {
                 case "Rock":
                     console.log("nobody wins, both y'all picked rock");
                     break;
@@ -26,7 +23,7 @@ function playRound(playerSelection, computerSelection) {
         break;
 
         case "paper":
-            switch(computerSelection) {
+            switch(computerPlay()) {
                 case "Rock":
                     console.log("U win, paper beats rock!");
                     break;
@@ -40,7 +37,7 @@ function playRound(playerSelection, computerSelection) {
         break;
 
         case "scissors":
-            switch(computerSelection) {
+            switch(computerPlay()) {
                 case "Rock":
                     console.log("U lose, rock beats scissors");
                     break;
@@ -51,10 +48,13 @@ function playRound(playerSelection, computerSelection) {
                     console.log("U win, scissors beat paper!")
                     break;
             }
+        
         break;
-        }
-       computerSelection = computerPlay();
+        } 
        }
+
+const playerSelection = "rock";
+
 
 
 
