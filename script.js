@@ -53,11 +53,11 @@ function playRound(askPlayer, computerPlay) {
                     loss++;
                     break;
                 case "Scissors":
-                    console.log("Nobody wins, both picked scissors")
+                    console.log("Nobody wins, both picked scissors");
                     draw++;
                     break;
                 case "Paper":
-                    console.log("U win, scissors beat paper!")
+                    console.log("U win, scissors beat paper!");
                     win++;
                     break;
             }
@@ -65,7 +65,7 @@ function playRound(askPlayer, computerPlay) {
         break;
 
         default:
-            console.log("invalid option selected")
+            console.log("invalid option selected");
         } 
        }
 
@@ -81,5 +81,15 @@ function game() {
     for (let i = 0; i < 5; i++) {
         playRound(askPlayer, computerPlay);
      }
+    if (win > loss && win > draw) { alert("You win the game!") }
+    else if (loss > win && loss > draw) { alert("U lost the game") }
+    else alert("Inconlusive. Play another 5 sets");    
+    
+    if(1) {
+        win = 0;
+        loss = 0;
+        draw = 0;
+    }
+
 }
 
