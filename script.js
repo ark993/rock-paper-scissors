@@ -1,7 +1,5 @@
 let win = 0;
 let loss = 0;
-let draw = 0;
-let invalid = 0;
 
 function computerPlay() {
     let options = ["Rock", "Paper", "Scissors"];
@@ -15,8 +13,8 @@ function playRound(askPlayer, computerPlay) {
         case "rock":
             switch(computerPlay()) {
                 case "Rock":
-                    console.log("nobody wins, both y'all picked rock");
-                    draw++;
+                    console.log("nobody wins, both y'all picked rock. Try again!");
+                    playRound(askPlayer, computerPlay);
                     break;
                 case "Scissors": 
                     console.log("U win, rock beat scissors");
@@ -40,8 +38,8 @@ function playRound(askPlayer, computerPlay) {
                     loss++;
                     break;
                 case "Paper":
-                    console.log("nobody wins, both picked paper");
-                    draw++;
+                    console.log("nobody wins, both picked paper. Try again");
+                    playRound(askPlayer, computerPlay);
                     break;
             }
         break;
@@ -53,8 +51,8 @@ function playRound(askPlayer, computerPlay) {
                     loss++;
                     break;
                 case "Scissors":
-                    console.log("Nobody wins, both picked scissors");
-                    draw++;
+                    console.log("Nobody wins, both picked scissors. Try again");
+                    playRound(askPlayer, computerPlay);
                     break;
                 case "Paper":
                     console.log("U win, scissors beat paper!");
@@ -82,9 +80,9 @@ function game() {
     for (let i = 0; i < 5; i++) {
         playRound(askPlayer, computerPlay);
      }
-    if (win > loss && win > draw) { alert("You win the game!") }
-    else if (loss > win && loss > draw) { alert("U lost the game") }
-    else alert("Inconlusive. Play another 5 sets");    
+    if (win > loss) { alert("You win the game!") }
+    else { alert("U lost the game") }
+        
     
     if(1) {
         win = 0;
