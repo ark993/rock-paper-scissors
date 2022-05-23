@@ -61,11 +61,12 @@ function playRound(askPlayer, computerPlay) {
                     win++;
                     break;
             }
-        
+                 
         break;
 
         default:
-            console.log("invalid option selected");
+            console.log("invalid option selected, try again:");
+            playRound(askPlayer, computerPlay)
         } 
        }
 
